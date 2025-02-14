@@ -1,6 +1,7 @@
 import app from "./app.js";
 import './db.js'
 import Product from './models/schema_model.js'
+import { PORT } from "./config.js";
 
 app.get('/products',async (req, res)=>{
     const products = await Product.find();
