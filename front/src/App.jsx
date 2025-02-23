@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./Pages/Main";
+import Layout from "./Pages/Layout";
 import Login from "./Pages/Login";
 import Admin from "./Pages/Admin";
 import { useState } from "react";
@@ -23,7 +23,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main />}></Route>
+          <Route path="/" element={<Layout />}></Route>
           <Route
             path="/admin"
             element={<Login Validation={Validation} />}

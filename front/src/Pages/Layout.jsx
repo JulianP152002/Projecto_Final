@@ -1,7 +1,7 @@
 import Nav from "../components/Main/Nav";
 import Footer from "../components/Main/Footer";
 import Header from "../components/Main/HEADER.JSX";
-function Main() {
+function Layout() {
   return (
     <div>
       <Nav />
@@ -10,4 +10,4 @@ function Main() {
     </div>
   );
 }
-export default Main;
+export default Layout;
