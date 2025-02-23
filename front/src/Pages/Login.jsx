@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const Username = "julian";
 const Password = "julian123";
-function Login() {
-  const Navigate = useNavigate();
+
+function Login(props) {
+  const navigate = useNavigate();
   const password = useRef();
   const username = useRef();
 
@@ -12,10 +13,12 @@ function Login() {
     e.preventDefault();
     const ValueUsername = username.current.value;
     const ValuePassword = password.current.value;
+    props.Validation(ValueUsername, ValuePassword);
     ValueUsername == Username && ValuePassword == Password
-      ? Navigate(`/${username}`)
-      : Navigate(`/`);
+      ? navigate(`/${Username}`)
+      : navigate(`/`);
   };
+
   return (
     <div className=" py-11 bg-blue-950 text-white flex flex-col justify-around items-center m-auto h-vh w-full ">
       <h1 className=" my-4">Login admin</h1>

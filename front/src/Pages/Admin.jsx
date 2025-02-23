@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
+
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-function Admin() {
+function Admin({ isLogged }) {
+  if (!isLogged) {
+    return <Navigate to="/" />;
+  }
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch(`${BACKEND_URL}/products`)

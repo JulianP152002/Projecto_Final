@@ -1,4 +1,463 @@
 @import "tailwindcss";
 
+html {
+  font-family: "Urbanist Variable", sans-serif;
+  background: #fff;
+  scroll-behavior: smooth;
+  font-size: 10px;
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+}
+:root {
+  --colorPrimar: #3189b6;
+  --colorbutton: #ffb004;
+  --colorfondohorary: #fff;
+  --color_description: #565656;
+}
 
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+*,
+*::after,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+p a {
+  display: inline;
+}
+
+img,
+video,
+picture,
+iframe,
+figure {
+  max-width: 100%;
+  display: block;
+}
+
+form,
+input,
+select,
+textarea,
+button,
+label {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+  border: transparent;
+  background-color: transparent;
+  color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #a4a4a4;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #8f8f8f;
+}
+
+body::-webkit-scrollbar-thumb:active {
+  background-color: #7b7b7b;
+}
+
+body::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-track:hover,
+body::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+.layout_footer {
+  padding: 3rem 4rem;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.fouter_container {
+  margin-top: 20rem;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.fouter_top {
+  padding-bottom: 7rem;
+}
+
+.fouter_social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social_img {
+  display: inline-block;
+  color: #565656;
+  font-size: 3rem;
+  padding: 0.5rem;
+  transition: all 300ms ease-in-out;
+}
+
+.socail_link:hover .social_img {
+  color: var(--color-text-body);
+}
+
+.fouter_main {
+  display: flex;
+  flex-direction: row;
+}
+
+.fouter_fleft {
+  flex-basis: 50%;
+}
+.fleft_container {
+  border-right: 1px solid var(--cloro-border);
+  padding-right: 8rem;
+  margin-right: 4rem;
+}
+
+.fleft_title {
+  display: inline-block;
+  font-size: 6.4rem;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--clor-title);
+  margin-bottom: 2rem;
+}
+
+.fleft_subtitle {
+  font-size: 1.7rem;
+}
+
+.fleft_group {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-color: var(--color-segundario);
+  border-radius: 20px;
+  height: 7rem;
+  padding: 1rem;
+  box-shadow: 0 24px 48px -15px #ddd;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fleft_mail-icon {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.fleft_form_control {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1.5rem;
+  height: auto;
+  border: none;
+  outline: none;
+  flex: 1;
+  color: var(--clor-title);
+  margin-left: 1rem;
+}
+
+.fletf_btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: var(--color-principal);
+  color: var(--color-segundario);
+  border-radius: 16px;
+  padding: 1.4rem 3rem;
+  transition: all 300ms ease-in-out;
+}
+
+.fletf_btn:hover {
+  background-color: var(--color-banner);
+}
+
+.fouter_right {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 50%;
+}
+
+.fouter_widget {
+  margin-bottom: 4rem;
+  flex-basis: 33%;
+}
+
+.widget_title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--clor-title);
+}
+
+.widget_link {
+  font-size: 1.8rem;
+  padding-top: 1rem;
+  display: inline-block;
+  transition: all 300ms linear;
+}
+.widget_link:hover {
+  color: var(--colorPrimar);
+}
+
+.fouter_bottom {
+  font-size: 1.7rem;
+  border-top: 1px solid var(--cloro-border);
+  display: flex;
+}
+
+.fouter_copyright {
+  flex-basis: 50%;
+}
+
+.copyright_text {
+  display: inline-block;
+  color: var(--color-text-body);
+}
+
+.copyright_text > a {
+  display: inline;
+}
+
+.fouter_links {
+  flex-basis: 50%;
+}
+
+.fouter_flinks {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+.flinks_title {
+  transition: all 300ms ease-in-out;
+}
+.flinks_title:hover {
+  color: var(--color-banner);
+}
+
+.flinks_item--separator::after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  background-color: var(--color-text-body);
+  border-radius: 50%;
+  position: absolute;
+  top: 46%;
+  left: 78.8%;
+}
+.container_primary {
+  width: 100%;
+  height: 50rem;
+  background-image: url(/src/assets/bacgroung.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 5rem;
+}
+
+.primary_content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-left_description {
+  margin-top: 2rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: start;
+}
+
+.content_left {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  margin-left: 8rem;
+  color: #fff;
+}
+
+.content-left_button {
+  margin-top: 2rem;
+  width: 20rem;
+  padding: 1rem 0.8rem;
+  border-radius: 10px;
+  background-color: #ffb004;
+  border: none;
+}
+
+.content_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8rem;
+  color: #fff;
+}
+
+.content-left_title {
+  font-size: 4rem;
+}
+
+.content-right_horario {
+  position: absolute;
+  height: 9rem;
+  padding: 1rem 2rem 9rem 1rem;
+  margin-top: 5rem;
+  margin-right: 20rem;
+  background: #fff;
+  border-radius: 10px;
+  color: black;
+  transition: all 300ms ease-in-out;
+  animation-name: Horario;
+  animation-duration: 2s;
+}
+
+@keyframes Horario {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5s;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.horario_title {
+  margin-left: 2rem;
+  font-style: 4rem;
+  font-weight: 900;
+}
+
+.horario_title::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: #008e13;
+  border-radius: 50px;
+  left: 13px;
+  top: 18px;
+}
+
+.horario_days {
+  color: gray;
+}
+
+.horario_hour {
+  color: black;
+  font-weight: 500;
+}
+
+.horario_hour-1 {
+  margin-left: 1.5rem;
+}
+
+.horario_hour-close {
+  margin-left: 7rem;
+}
+
+.content-right_img {
+  width: 87rem;
+  position: relative;
+  right: -27rem;
+  bottom: -15rem;
+  transition: all 300ms ease-in-out;
+  animation-name: BMW;
+  animation-duration: 1.8s;
+}
+
+@keyframes BMW {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.menu_logo {
+  max-width: 80px;
+  display: flex;
+}
+
+.navbar_left {
+  margin-left: 4rem;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu_list,
+.menu_left {
+  display: flex;
+  padding: 1rem;
+}
+
+.menu_link,
+.menu_login,
+.menu_search {
+  padding: 0 1rem;
+  transition: all 350ms ease-in-out;
+}
+
+.menu_link:hover,
+.menu_login:hover,
+.menu_search:hover {
+  color: var(--colorPrimar);
+}
