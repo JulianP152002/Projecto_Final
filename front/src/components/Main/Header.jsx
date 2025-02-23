@@ -1,4 +1,4 @@
-import BmwCoupe from "/src/assets/M440iCoupe.WebP";
+import BmwCoupe from "/src/assets/M440iCoupe.webp";
 function Header() {
   return (
     <header className="container_primary">
