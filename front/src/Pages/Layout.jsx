@@ -1,6 +1,6 @@
 import Nav from "../components/Main/Nav";
 import Footer from "../components/Main/Footer";
-import Header from "../components/Main/HEADER.JSX";
+import Header from "../components/Main/Header";
 function Layout() {
   return (
     <div>
