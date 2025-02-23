@@ -1,19 +1,25 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { GetProducts } from "../hooks/GetProducts";
+import RenderProducts from "../hooks/RenderProducts";
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 function Admin({ isLogged }) {
+  const [products, setProducts] = useState([]);
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
   if (!isLogged) {
     return <Navigate to="/" />;
   }
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch(`${BACKEND_URL}/products`)
-      .then((Response) => Response.json())
-      .then((data) => {
-        setProducts(data);
-      });
-  }, []);
+
+  const { data } = GetProducts();
+  setProducts(data);
+  // useEffect(() => {
+  //   fetch(`${BACKEND_URL}/products`)
+  //     .then((Response) => Response.json())
+  //     .then((data) => {
+  //       setProducts(data);
+  //     });
+  // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,15 +55,11 @@ function Admin({ isLogged }) {
         </button>
       </form>
       <div>
-        {products.map((product) => {
-          return (
-            <div key={product._id}>
-              <h2>{product.name}</h2>
-              <strong>{product.price}</strong>
-              <p>{product.description}</p>
-            </div>
-          );
-        })}
+        {products.length > 0 ? (
+          <RenderProducts products={products} />
+        ) : (
+          <p>Cargando...</p>
+        )}
       </div>
     </div>
   );
