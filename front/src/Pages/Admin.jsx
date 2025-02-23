@@ -55,7 +55,7 @@ function Admin({ isLogged }) {
         </button>
       </form>
       <div>
-        {products.length > 0 ? (
+        {products?.length > 0 ? (
           <RenderProducts products={products} />
         ) : (
           <p>Cargando...</p>
