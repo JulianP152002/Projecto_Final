@@ -1,4 +1,4 @@
-import Logue from "/src/assets/Bmw.WebP";
+import Logue from "/src/assets/Bmw.webp";
 function Nav() {
   return (
     <div>
