@@ -9,7 +9,7 @@ function Layout() {
       <Nav />
       <Header />
       <Cars />
-      <Contact />
+      {/* <Contact /> */}
 
       <Footer />
     </div>

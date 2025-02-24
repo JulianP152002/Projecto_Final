@@ -1,25 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import { GetProducts } from "../hooks/GetProducts";
 import RenderProducts from "../hooks/RenderProducts";
+import { Products } from "../hooks/Products";
 
 function Admin({ isLogged }) {
-  const [products, setProducts] = useState([]);
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+  const { products, getProducts } = Products();
+  getProducts();
+  const BACKEND_URL =
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
   if (!isLogged) {
     return <Navigate to="/" />;
   }
-
-  const { data } = GetProducts();
-  setProducts(data);
-  // useEffect(() => {
-  //   fetch(`${BACKEND_URL}/products`)
-  //     .then((Response) => Response.json())
-  //     .then((data) => {
-  //       setProducts(data);
-  //     });
-  // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,7 +32,7 @@ function Admin({ isLogged }) {
       }),
     });
     const data = await res.json();
-    setProducts([...products, data]);
+    products.push(data);
   };
 
   return (
@@ -54,7 +46,7 @@ function Admin({ isLogged }) {
           Enviar
         </button>
       </form>
-      <div>
+      <div className="cars_cars-m">
         {products?.length > 0 ? (
           <RenderProducts products={products} />
         ) : (
