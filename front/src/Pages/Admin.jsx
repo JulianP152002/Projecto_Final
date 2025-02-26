@@ -5,7 +5,9 @@ import { Products } from "../hooks/Products";
 
 function Admin({ isLogged }) {
   const { products, getProducts } = Products();
-  getProducts();
+  useEffect(() => {
+    getProducts();
+  }, []);
   const BACKEND_URL =
     import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
@@ -42,6 +44,7 @@ function Admin({ isLogged }) {
         <input placeholder="nombre" type="text" />
         <input placeholder="precio" type="text" />
         <input placeholder="descripcion" type="text" />
+        <input type="file" />
         <button className="" type="submit">
           Enviar
         </button>

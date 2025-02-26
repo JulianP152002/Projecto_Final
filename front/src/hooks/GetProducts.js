@@ -4,6 +4,7 @@ export const GetProducts = async () => {
   try {
     const res = await fetch(`${BACKEND_URL}/products`);
     const data = await res.json();
+    console.log(data);
     return data;
   } catch (err) {
     throw new Error(err);

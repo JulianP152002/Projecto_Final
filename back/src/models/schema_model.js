@@ -5,6 +5,10 @@ const ModelSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  image: {
+    type: String,
+    require: true,
+  },
   price: {
     type: Number,
     requiere: true,
