@@ -1,10 +1,10 @@
 import BmwCoupe from "/src/assets/M440iCoupe.webp";
 function Header() {
   return (
-    <header className="container_primary">
+    <header className="  container_primary">
       <div className="primary_content">
         <div className="content_left">
-          <h1 className="content-left_title">
+          <h1 className="content-left_title ">
             LOS MEJORES VEHICULOS <br />
             DEL MUNDO
           </h1>

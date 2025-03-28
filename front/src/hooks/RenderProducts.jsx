@@ -1,7 +1,6 @@
 export default function RenderProducts({ products }) {
-  const id = "jns";
   return (
-    <div>
+    <div className="cars_cars-m">
       {products?.map((product) => (
         <div key={product._id}>
           <a className="container_cars-m" href={`/Cars/`}>
@@ -9,13 +8,13 @@ export default function RenderProducts({ products }) {
               <img
                 loading="lazy"
                 className="cars-m_car"
-                src={`/src/icons/imgs/${id}.WebP`}
+                src={product.image}
                 alt={`Imagen del vehiculo ${name}`}
               />
               <img
                 loading="lazy"
                 className="cars-m_logo"
-                src="/src/icons/imgs/logobmw.WebP"
+                src="/src/assets/Bmw.WebP"
                 alt={`Imagen del vehiculo ${name}`}
               />
             </div>

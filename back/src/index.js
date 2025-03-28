@@ -1,22 +1,14 @@
 import app from "./app.js";
 import "./db.js";
-import Product from "./models/schema_model.js";
-import multer from "multer";
-const upload = multer({ dest: "uploads/" });
+import { getProducts } from "./controllers/controllers.js";
+import { SaveProducts } from "./controllers/controllers.js";
+import { upload } from "./config/multer.js";
+import { Product } from "./models/schema_model.js";
+import { uploadFile } from "./utils/upload.js";
+app.get("/products", getProducts);
 
-app.get("/products", async (req, res) => {
-  const products = await Product.find();
-  res.send(products);
-});
-
-app.post("/products", upload.single, async (req, res) => {
-  const { name, price, description } = req.body; //llamo los datos de front
-  const { image } = req.file;
-  const Newproducts = await Product.create({
-    name,
-    price,
-    description,
-    image,
-  }); // Los guardo en la base de datos
-  res.send(Newproducts); // y le respondo al usuarion con los nuevos datos
-});
+app.post(
+  "/products",
+  upload.fields([{ name: "image", maxCount: 1 }]),
+  SaveProducts
+);

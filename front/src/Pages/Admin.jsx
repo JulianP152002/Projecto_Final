@@ -1,62 +1,22 @@
-import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import RenderProducts from "../hooks/RenderProducts";
+import FormPost from "../components/Main/FormPost";
 import { Products } from "../hooks/Products";
+import PropTypes from "prop-types";
 
-function Admin({ isLogged }) {
-  const { products, getProducts } = Products();
-  useEffect(() => {
-    getProducts();
-  }, []);
-  const BACKEND_URL =
-    import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+export default function Admin({ isLogged }) {
+  const { products } = Products();
 
   if (!isLogged) {
     return <Navigate to="/" />;
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const name = e.target[0].value;
-    const price = e.target[1].value;
-    const description = e.target[2].value;
-
-    const res = await fetch(`${BACKEND_URL}/products`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-      body: JSON.stringify({
-        name,
-        price,
-        description,
-      }),
-    });
-    const data = await res.json();
-    products.push(data);
-  };
-
   return (
-    <div>
-      <h1 className="text-red">Products</h1>
-      <form onSubmit={handleSubmit}>
-        <input placeholder="nombre" type="text" />
-        <input placeholder="precio" type="text" />
-        <input placeholder="descripcion" type="text" />
-        <input type="file" />
-        <button className="" type="submit">
-          Enviar
-        </button>
-      </form>
-      <div className="cars_cars-m">
-        {products?.length > 0 ? (
-          <RenderProducts products={products} />
-        ) : (
-          <p>Cargando...</p>
-        )}
-      </div>
+    <div className=" hola w-full relative py-14 flex flex-col  m-auto items-center text-center">
+      <h1 className=" font-bold text-3xl pb-5">Subir nuevo vehiculo</h1>
+      <FormPost className="flex " products={products} />
     </div>
   );
 }
-export default Admin;
+Admin.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+};
