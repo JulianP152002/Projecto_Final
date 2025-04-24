@@ -1,10 +1,10 @@
 function Footer() {
   return (
     <section>
-      <footer className="layout_footer">
-        <div className="fouter_container">
-          <section className="fouter_top">
-            <ul className="fouter_social">
+      <footer className="w-full m-auto px-[4rem] py-[3rem]">
+        <div className="w-full max-w-full h-full">
+          {/* <section className="fouter_top">
+            <ul className="flex flex-row items-center justify-spac">
               <li className="social_item">
                 <a className="socail_link" href="">
                   <i className="fa-brands fa-facebook-f social_img"></i>
@@ -53,10 +53,10 @@ function Footer() {
                 </a>
               </li>
             </ul>
-          </section>
+          </section> */}
           <section className="fouter_main">
-            <div className="fouter_right">
-              <div className="fouter_widget">
+            <div className="flex flex-row basis-[100%]  lg:basis-[50%] ">
+              <div className=" mb-[4rem] basis-[50%] lg:basis-[33%]">
                 <h6 className="widget_title">Contacto</h6>
 
                 <ul className="widget_list">
@@ -92,7 +92,7 @@ function Footer() {
                 </ul>
               </div>
 
-              <div className="fouter_widget">
+              <div className="mb-[4rem] basis-[33%]">
                 <h6 className="widget_title">Descubre BMW</h6>
 
                 <ul className="widget_list">

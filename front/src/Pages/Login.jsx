@@ -1,45 +1,22 @@
-import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import { Header } from "../components/Login/Header_Login";
+import { LoginForm } from "../components/Login/Login_Form";
 
-const Username = "julian";
-const Password = "julian123";
-
-function Login(props) {
-  const navigate = useNavigate();
-  const password = useRef();
-  const username = useRef();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const ValueUsername = username.current.value;
-    const ValuePassword = password.current.value;
-    props.Validation(ValueUsername, ValuePassword);
-    ValueUsername == Username && ValuePassword == Password
-      ? navigate(`/${Username}`)
-      : navigate(`/`);
-  };
-
+Login.propTypes = {
+  Validation: PropTypes.func.isRequired,
+};
+function Login({ Validation }) {
   return (
-    <div className=" py-11 bg-blue-950 text-white flex flex-col justify-around items-center m-auto h-vh w-full ">
-      <h1 className=" my-4">Login admin</h1>
-      <form className="flex flex-col" onSubmit={handleSubmit} action="">
-        <input
-          ref={username}
-          className="border-1"
-          type="text"
-          placeholder="Usuario"
-        />
-        <input
-          ref={password}
-          className="border-1"
-          type="text"
-          placeholder="Contraseña"
-        />
-        <button className="border-1 bg-black px-4 py-2 rounded-4xl my-4 hover:scale-105 transition pointer">
-          Enviar
-        </button>
-      </form>
-    </div>
+    <section className="relative flex-col overflow-x-hidden w-full h-full   text-black flex ">
+      <Header />
+      <h1 className=" mx-6 text-[#262626] text-6xl font-sans  my-4">
+        Ingresar a BMW APP
+      </h1>
+
+      <div className=" w-4xl py-5 flex flex-col pl-24 h-full">
+        <LoginForm Validation={Validation} />
+      </div>
+    </section>
   );
 }
 export default Login;

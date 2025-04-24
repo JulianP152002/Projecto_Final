@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
-import FormPost from "../components/Main/FormPost";
-import { Products } from "../hooks/Products";
+import FormPost from "../components/admin/FormPost";
+import { Products } from "../utils/Products";
 import PropTypes from "prop-types";
 
 export default function Admin({ isLogged }) {

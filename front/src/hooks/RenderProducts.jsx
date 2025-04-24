@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 export default function RenderProducts({ products }) {
   return (
     <div className="cars_cars-m">
       {products?.map((product) => (
         <div key={product._id}>
-          <a className="container_cars-m" href={`/Cars/`}>
+          <Link className="container_cars-m" to={`/Cars/${product.name}`}>
             <div className="cars-m_imgs">
               <img
                 loading="lazy"
@@ -14,16 +16,16 @@ export default function RenderProducts({ products }) {
               <img
                 loading="lazy"
                 className="cars-m_logo"
-                src="/src/assets/Bmw.WebP"
+                src="/src/assets/logo_cars.png"
                 alt={`Imagen del vehiculo ${name}`}
               />
             </div>
             <div className="cars-m_description">
               <h3 className="cars-m_title">{product.name}</h3>
-              <p className="cars-m_fuel">{product.price}</p>
-              <p className="cars-m_precie">${product.description}</p>
+              <p className="cars-m_fuel">{product.description}</p>
+              <p className="cars-m_precie">${product.price}</p>
             </div>
-          </a>
+          </Link>
         </div>
       ))}
     </div>

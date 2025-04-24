@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+  --color-titlecolor: #262626;
+  --color-colortext: #080000;
+  --color-btngray: #262626;
+  --color-btnblue: #0066b1;
+  --color-textgray: #444444;
+}
 html {
   font-family: "Urbanist Variable", sans-serif;
   background: #fff;
@@ -7,15 +14,17 @@ html {
   font-size: 10px;
   overflow-x: hidden;
   text-rendering: optimizeSpeed;
+  width: 100%;
 }
-:root {
+/* :root {
   --colorPrimar: #3189b6;
   --colorbutton: #ffb004;
   --colorfondohorary: #fff;
   --color_description: #565656;
-}
+} */
 
 body {
+  width: 100%;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
@@ -74,30 +83,6 @@ body::-webkit-scrollbar-track:hover,
 body::-webkit-scrollbar-track:active {
   background: #d4d4d4;
 }
-.layout_footer {
-  padding: 3rem 4rem;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-}
-
-.fouter_container {
-  margin-top: 20rem;
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
-}
-
-.fouter_top {
-  padding-bottom: 7rem;
-}
-
-.fouter_social {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
 
 .social_img {
   display: inline-block;
@@ -132,66 +117,6 @@ body::-webkit-scrollbar-track:active {
   font-weight: 500;
   color: var(--clor-title);
   margin-bottom: 2rem;
-}
-
-.fleft_subtitle {
-  font-size: 1.7rem;
-}
-
-.fleft_group {
-  position: relative;
-  display: flex;
-  width: 100%;
-  background-color: var(--color-segundario);
-  border-radius: 20px;
-  height: 7rem;
-  padding: 1rem;
-  box-shadow: 0 24px 48px -15px #ddd;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.fleft_mail-icon {
-  display: inline-block;
-  margin-left: 2rem;
-}
-
-.fleft_form_control {
-  position: relative;
-  display: block;
-  padding: 0.5rem 1.5rem;
-  height: auto;
-  border: none;
-  outline: none;
-  flex: 1;
-  color: var(--clor-title);
-  margin-left: 1rem;
-}
-
-.fletf_btn {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: var(--color-principal);
-  color: var(--color-segundario);
-  border-radius: 16px;
-  padding: 1.4rem 3rem;
-  transition: all 300ms ease-in-out;
-}
-
-.fletf_btn:hover {
-  background-color: var(--color-banner);
-}
-
-.fouter_right {
-  display: flex;
-  flex-direction: row;
-  flex-basis: 50%;
-}
-
-.fouter_widget {
-  margin-bottom: 4rem;
-  flex-basis: 33%;
 }
 
 .widget_title {
@@ -259,7 +184,7 @@ body::-webkit-scrollbar-track:active {
 }
 .container_primary {
   width: 100%;
-  height: 50rem;
+
   background-image: url(/src/assets/bacgroung.webp);
   background-position: center;
   background-repeat: no-repeat;
@@ -271,13 +196,6 @@ body::-webkit-scrollbar-track:active {
   position: relative;
   display: flex;
   justify-content: space-between;
-}
-
-.content-left_description {
-  margin-top: 2rem;
-  font-weight: 500;
-  display: flex;
-  justify-content: start;
 }
 
 .content_left {
@@ -298,7 +216,6 @@ body::-webkit-scrollbar-track:active {
 }
 
 .content_right {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -397,17 +314,9 @@ body::-webkit-scrollbar-track:active {
   display: flex;
 }
 
-.navbar_left {
-  margin-left: 4rem;
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .menu_list,
 .menu_left {
+  align-items: center;
   display: flex;
   padding: 1rem;
 }
@@ -415,7 +324,9 @@ body::-webkit-scrollbar-track:active {
 .menu_link,
 .menu_login,
 .menu_search {
-  padding: 0 1rem;
+  align-items: center;
+  height: 100%;
+  padding: 0 1.5rem;
   transition: all 350ms ease-in-out;
 }
 
@@ -444,12 +355,6 @@ body::-webkit-scrollbar-track:active {
 
 .content_cars-title span {
   color: var(--colorPrimar);
-}
-
-.cars_title {
-  display: flex;
-  color: #3c3c3c;
-  font-weight: 200;
 }
 
 .cars_cars-m {
@@ -525,4 +430,130 @@ body::-webkit-scrollbar-track:active {
 
 .contact_map-title span {
   color: var(--colorPrimar);
+}
+/*CARRUSEL*/
+/* SCROLLER */
+/* horizontal scroll snap */
+.content {
+  padding-bottom: 20rem;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.carousel {
+  height: 100%;
+  padding-top: 5rem;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+
+  /* snap to center */
+  & li {
+    scroll-snap-align: center;
+  }
+}
+
+/* SCROLL MARKERS */
+/* create marker group */
+/* create markers for each item */
+.carousel {
+  /* create markers 'after' scroller */
+  scroll-marker-group: after;
+
+  /* create markers container and own dots layout */
+  &::scroll-marker-group {
+    grid-area: markers; /* place markers in parent grid area */
+
+    /* 15px by 15px horizontal grid - size of dots */
+    display: grid;
+    place-content: safe center;
+    grid: 30px / auto-flow 30px;
+    gap: 15px;
+    padding: 15px;
+    scroll-padding: 15px;
+    overflow-y: visible;
+
+    /* handle overflow */
+    overflow: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* a marker for each <li> */
+  & > .content > li {
+    /* create by adding content */
+    &::scroll-marker {
+      content: " "; /* empty content is fine, just like ::before */
+
+      /* style it as you need */
+      border: 1px solid #bbb;
+      border-radius: 50%;
+      outline-offset: 4px;
+      -webkit-tap-highlight-color: transparent;
+      overflow-y: visible;
+
+      /* snap if group is overflowing */
+      scroll-snap-align: center;
+    }
+
+    &::scroll-marker:is(:hover, :focus-visible) {
+      border-color: LinkText;
+    }
+
+    &::scroll-marker:target-current {
+      background: LinkText;
+      border-color: LinkText;
+    }
+  }
+}
+
+@layer support.demo {
+  .scroll-layout {
+    display: grid;
+    /*     border: 1px dashed gray; */
+
+    /* try a different layout =) */
+    grid-template-areas:
+      "left scroll right"
+      ". markers .";
+
+    /* just place items in the grid */
+    grid-template-areas:
+      "scroll scroll scroll"
+      "left markers right";
+
+    grid-template-columns: auto 1fr auto;
+
+    .carousel {
+      grid-area: scroll;
+    }
+  }
+
+  .carousel {
+    max-inline-size: 80cqi;
+    overscroll-behavior-x: contain;
+    scroll-behavior: smooth;
+    overflow-y: visible;
+  }
+
+  .content {
+    display: grid;
+    grid: 50vmin / auto-flow 79vmin;
+    gap: 15px;
+    padding: 1rem 4rem;
+    margin: 0;
+
+    > li {
+      list-style-type: none;
+    }
+  }
 }
