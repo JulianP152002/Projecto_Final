@@ -21,7 +21,7 @@ export default function DetailCar() {
             </h1>
 
             <VideoDesing
-              src={Video1}
+              src="/videos/Detail1.mp4"
               trigger={isMobile ? "visibility" : "hover"}
               width="100%"
               height="80%"
@@ -45,7 +45,7 @@ export default function DetailCar() {
             </h1>
 
             <VideoDesing
-              src={Video2}
+              src="/videos/Details2.mp4"
               trigger={isMobile ? "visibility" : "hover"}
               width="100%"
               height="80%"
@@ -69,7 +69,7 @@ export default function DetailCar() {
             </h1>
 
             <VideoDesing
-              src={Video3}
+              src="/videos/Details3.mp4"
               trigger={isMobile ? "visibility" : "hover"}
               width="100%"
               height="80%"

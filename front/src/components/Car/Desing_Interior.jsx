@@ -16,7 +16,7 @@ export default function DesingInterior() {
       </h1>
       <div className="h-[70%]  ">
         <VideoDesing
-          src={Video1}
+          src="/videos/Desing1.mp4"
           trigger="visibility"
           width="90%"
           height="70%"
@@ -25,8 +25,7 @@ export default function DesingInterior() {
       <div className="flex lg:px-4 lg:pt-10 m-auto items-center">
         <div className="w-[90%] m-auto lg:pr-4 lg:w-full lg:block py-7">
           <VideoDesing
-            className=""
-            src={Video2}
+            src="/videos/Desing3.mp4"
             trigger={isMobile ? "visibility" : "hover"}
           />
           <h1 className="text-textgray text-4xl py-8">BMW Interaction Bar.</h1>
@@ -38,7 +37,7 @@ export default function DesingInterior() {
         </div>
         <div className="hidden lg:pl-4 lg:block lg:w-full">
           <VideoDesing
-            src={Video3}
+            src="/videos/Desing3.mp4"
             trigger={isMobile ? "visibility" : "hover"}
           />
           <h1 className="text-textgray text-4xl py-8">

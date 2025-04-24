@@ -1,5 +1,3 @@
-import Video3 from "../../assets/Videos/Conectividad.mp4";
-
 import VideoDesing from "./Video";
 export default function TecnologeCar() {
   return (
@@ -8,7 +6,7 @@ export default function TecnologeCar() {
       <h1 className="text-4xl text-textgray pb-8 m-auto font-extralight">
         SISTEMA DE ASISTENCIA Y CONECTIVIDAD
       </h1>
-      <VideoDesing src={Video3} trigger="visibility" />
+      <VideoDesing src="/videos/Conectividad.mp4" trigger="visibility" />
     </>
   );
 }
