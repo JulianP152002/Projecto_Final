@@ -6,16 +6,16 @@ export default function RenderProducts({ products }) {
       {products?.map((product) => (
         <div key={product._id}>
           <Link className="container_cars-m" to={`/Cars/${product.name}`}>
-            <div className="cars-m_imgs">
+            <div className="cars-m_imgs relative">
               <img
                 loading="lazy"
-                className="cars-m_car"
+                className="cars-m_car relative w-[50%] h-auto hover:scale-110 transition-all duration-500"
                 src={product.image}
                 alt={`Imagen del vehiculo ${name}`}
               />
               <img
                 loading="lazy"
-                className="cars-m_logo"
+                className="cars-m_logo absolute bottom-5 right-125"
                 src="/src/assets/logo_cars.png"
                 alt={`Imagen del vehiculo ${name}`}
               />
