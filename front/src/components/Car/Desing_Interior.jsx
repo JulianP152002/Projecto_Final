@@ -1,10 +1,6 @@
 import VideoDesing from "./Video";
 import { SizeViewport } from "../../utils/SizeViport";
 
-import Video1 from "../../assets/videos/Desing1.mp4";
-import Video2 from "../../assets/videos/Desing2.mp4";
-import Video3 from "../../assets/videos/Desing3.mp4";
-
 export default function DesingInterior() {
   const { Size } = SizeViewport();
   const isMobile = Size < 768; // Cambia el valor según tu diseño responsivo
