@@ -18,12 +18,38 @@ export default function FormPost({ products }) {
     let formData = new FormData();
     let name = e.target[0].value;
     let price = e.target[1].value;
+    let potencia = e.target[3].value;
+    let velocidad = e.target[4].value;
+    let hps = e.target[5].value;
     let description = e.target[2].value;
     formData.append("name", name);
     formData.append("price", price);
     formData.append("description", description);
     formData.append("image", image);
     formData.append("category", category);
+    formData.append("potencia", potencia);
+    formData.append("velocidad", velocidad);
+    formData.append("hps", hps);
+    if (!category) {
+      setError("Por favor selecciona una categoria");
+      setisLoding(false);
+      return;
+    }
+    if (!potencia) {
+      setError("Por favor ingresa la potencia del vehiculo");
+      setisLoding(false);
+      return;
+    }
+    if (!velocidad) {
+      setError("Por favor ingresa la velocidad del vehiculo");
+      setisLoding(false);
+      return;
+    }
+    if (!hps) {
+      setError("Por favor ingresa los caballos de fuerza del vehiculo");
+      setisLoding(false);
+      return;
+    }
     if (!name) {
       setError("Por favor ingresa un nombre");
       setisLoding(false);
@@ -75,7 +101,29 @@ export default function FormPost({ products }) {
         placeholder="Descripcion"
         type="text"
       />
-      <select value={category} onChange={manejarCambio}>
+      <input
+        className="w-[90%] border-[0.5px] my-1 border-gray-400/70 px-1 rounded-[4px]"
+        name="potencia"
+        placeholder="Potencia"
+        type="text"
+      />
+      <input
+        className="w-[90%] border-[0.5px] my-1 border-gray-400/70 px-1 rounded-[4px]"
+        name="velocidad"
+        placeholder="Velocidad"
+        type="text"
+      />
+      <input
+        className="w-[90%] border-[0.5px] my-1 border-gray-400/70 px-1 rounded-[4px]"
+        name="hps"
+        placeholder="Caballos de Fuerza"
+        type="text"
+      />
+      <select
+        className="w-[90%] justify-center flex items-center m-auto border-[0.5px] my-1 border-gray-400/70 px-1 rounded-[4px]"
+        value={category}
+        onChange={manejarCambio}
+      >
         <option value="">Categoria</option>
 
         <option value="Hibridos">Hibridos</option>

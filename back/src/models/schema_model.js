@@ -7,7 +7,14 @@ const ModelSchema = new Schema(
     description: { type: String },
     image: { type: String, requiere: true },
     category: { type: String, requiere: true },
+    potencia: { type: String, requiere: true },
+    velocidad: { type: String, requiere: true },
+    hps: { type: String, requiere: true },
   },
+  {
+    collection: "products",
+  },
+
   {
     Timestamps: true,
   }

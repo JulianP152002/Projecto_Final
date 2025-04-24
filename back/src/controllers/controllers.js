@@ -11,7 +11,8 @@ export const getProducts = async (req, res) => {
 
 export const SaveProducts = async (req, res) => {
   try {
-    const { name, price, description, category } = req.body;
+    const { name, price, description, category, potencia, velocidad, hps } =
+      req.body;
     const image = req.files.image;
 
     const { donwloadURL } = await uploadFile(image[0]);
@@ -21,8 +22,10 @@ export const SaveProducts = async (req, res) => {
       description,
       image: donwloadURL,
       category,
+      potencia,
+      velocidad,
+      hps,
     }).save(); // Los guardo en la base de datos
-    // res.send(Newproducts); // y le respondo al usuarion con los nuevos datos
     return res.status(200).json({ Newproducts });
   } catch (error) {
     return res.status(500).json({ status: false, error: error.message });
