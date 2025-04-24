@@ -1,7 +1,4 @@
 import { SizeViewport } from "../../utils/SizeViport";
-import Video1 from "../../assets/Videos/Detail1.mp4";
-import Video2 from "../../assets/Videos/Details2.mp4";
-import Video3 from "../../assets/Videos/Details3.mp4";
 
 import VideoDesing from "./Video";
 export default function DetailCar() {
