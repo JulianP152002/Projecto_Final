@@ -26,7 +26,11 @@ export default function CarFilter({ products }) {
 
   return (
     <div>
-      <search className=" p-5 overflow-hidden w-[40px] h-[40px] hover:w-[200px] bg-[#4070f4] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex group items-center hover:duration-300 duration-300">
+      <search
+        className={` p-5 overflow-hidden w-[40px] h-[40px] ${
+          search.length > 0 ? "w-[200px]" : "hover:w-[200px]"
+        } bg-[#4070f4] shadow-[2px_2px_20px_rgba(0,0,0,0.08)] rounded-full flex group items-center hover:duration-300 duration-300 `}
+      >
         <div className="flex  fill-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -47,16 +51,15 @@ export default function CarFilter({ products }) {
         />
       </search>
       {search !== "" && (
-        <ul className="  px-4 py-6 w-[50%] flex rounded-2xl h-[30rem] absolute backdrop-blur-3xl bg-white/40 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+        <ul className=" left-1 px-4 py-6 w-[100%] lg:w-[50%] flex rounded-2xl h-[30rem] absolute backdrop-blur-3xl bg-white/40 shadow-[2px_2px_20px_rgba(0,0,0,0.08)] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
           {loading ? <SkeletonCar /> : <RenderProducts products={filtered} />}
-
-          <div className="w-full m-auto flex justify-center">
-            {filtered.length === 0 && !loading && (
+          {filtered.length === 0 && !loading && (
+            <div className="w-full m-auto flex justify-center">
               <h1 className="text-center absolute left-60 text-gray-700 font-bold text-[15px]">
                 No se encontraron resultados...
               </h1>
-            )}
-          </div>
+            </div>
+          )}
         </ul>
       )}
     </div>

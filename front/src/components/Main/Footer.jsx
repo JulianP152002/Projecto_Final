@@ -3,112 +3,89 @@ function Footer() {
     <section>
       <footer className="w-full m-auto px-[4rem] py-[3rem]">
         <div className="w-full max-w-full h-full">
-          {/* <section className="fouter_top">
-            <ul className="flex flex-row items-center justify-spac">
-              <li className="social_item">
-                <a className="socail_link" href="">
-                  <i className="fa-brands fa-facebook-f social_img"></i>
-                </a>
-              </li>
-
-              <li className="social_item">
-                <a className="socail_link" href="">
-                  <i className="fa-brands fa-twitter social_img"></i>
-                </a>
-              </li>
-
-              <li className="social_item">
-                <a className="socail_link" href="">
-                  <i className="fa-brands fa-youtube social_img"></i>
-                </a>
-              </li>
-
-              <li className="social_item">
-                <a className="socail_link" href="">
-                  <i className="fa-brands fa-linkedin social_img"></i>
-                </a>
-              </li>
-
-              <li className="social_item">
-                <a className="socail_link" href="">
-                  <i className="fa-brands fa-instagram social_img"></i>
-                </a>
-              </li>
-
-              <li className="social_item">
-                <a className="socail_link" href="">
-                  <i className="fa-brands fa-pinterest-p social_img"></i>
-                </a>
-              </li>
-
-              <li className="social_item">
-                <a className="socail_link" href="">
-                  <i className="fa-brands fa-vimeo-v social_img"></i>
-                </a>
-              </li>
-
-              <li className="social_item">
-                <a className="socail_link" href="">
-                  <i className="fa-brands fa-behance social_img"></i>
-                </a>
-              </li>
-            </ul>
-          </section> */}
           <section className="fouter_main">
-            <div className="flex flex-row basis-[100%]  lg:basis-[50%] ">
-              <div className=" mb-[4rem] basis-[50%] lg:basis-[33%]">
-                <h6 className="widget_title">Contacto</h6>
+            <div className="flex text-xl flex-row basis-[100%]  lg:basis-[50%] ">
+              <div className=" mb-[4rem]  basis-[50%] lg:basis-[65%]">
+                <h6 className=" text-[1.8rem] md:text-[1.9rem] lg:text-4xl xl:text-2xl 2xl:text-6xl font-bold ">
+                  Contacto
+                </h6>
 
                 <ul className="widget_list">
-                  <li className="widget_item">
-                    <a className="widget_link" href="">
+                  <li className="flex flex-col font-normal :">
+                    <a
+                      className="text-[1.6rem] lg:text-[2r md:text-[1.8rem]em] text-nowrap xl:text-[2.3rem] 2xl:text-[2.5rem] pt-3 hover:text-btnblue transition-color duration-500 hover:scale-105  font-normal"
+                      href=""
+                    >
                       Red Oficial BMW
                     </a>
                   </li>
 
-                  <li className="widget_item">
-                    <a className="widget_link" href="">
+                  <li className="flex flex-col font-normal :">
+                    <a
+                      className="text-[1.6rem] lg:text-[2rem] text-now md:text-[1.8rem]rap lg:text-4xl xl:text-[2.3rem] 2xl:text-[2.5rem] pt-3 hover:text-btnblue transition-color duration-500 hover:scale-105  font-normal"
+                      href=""
+                    >
                       Agenda tu Prueba de Manejo
                     </a>
                   </li>
 
-                  <li className="widget_item">
-                    <a className="widget_link" href="">
+                  <li className="flex flex-col font-normal">
+                    <a
+                      className="text-[1.6rem] lg:text-[2rem] text-now md:text-[1.8rem]rap lg:text-4xl xl:text-[2.3rem] 2xl:text-[2.5rem] pt-3 hover:text-btnblue transition-color duration-500 hover:scale-105  font-normal"
+                      href=""
+                    >
                       Solicita Cotizacion
                     </a>
                   </li>
 
-                  <li className="widget_item">
-                    <a className="widget_link" href="">
+                  <li className="flex flex-col font-normal :">
+                    <a
+                      className="text-[1.6rem] lg:text-[2rem] text-now md:text-[1.8rem]rap lg:text-4xl xl:text-[2.3rem] 2xl:text-[2.5rem] pt-3 hover:text-btnblue transition-color duration-500 hover:scale-105  font-normal"
+                      href=""
+                    >
                       Configura tu BMW
                     </a>
                   </li>
 
-                  <li className="widget_item">
-                    <a className="widget_link" href="">
+                  <li className="flex flex-col font-normal :">
+                    <a
+                      className="text-[1.6rem] lg:text-[2r md:text-[1.8rem]em] text-nowrap xl:text-[2.3rem] 2xl:text-[2.5rem] pt-3 hover:text-btnblue transition-color duration-500 hover:scale-105  font-normal"
+                      href=""
+                    >
                       Contacto
                     </a>
                   </li>
                 </ul>
               </div>
 
-              <div className="mb-[4rem] basis-[33%]">
-                <h6 className="widget_title">Descubre BMW</h6>
+              <div className="mb-[4rem] basis-[50%]">
+                <h6 className=" text-[1.8rem] md:text-[1.9rem] lg:text-4xl xl:text-2xl 2xl:text-6xl font-bold">
+                  Descubre BMW
+                </h6>
 
-                <ul className="widget_list">
-                  <li className="widget_item">
-                    <a className="widget_link" href="">
+                <ul className="lg:text-2xl">
+                  <li className="flex flex-col font-normal :">
+                    <a
+                      className="text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] xl:text-[2.3rem] 2xl:text-[2.5rem] pt-3 hover:text-btnblue transition-color duration-500 hover:scale-105  font-normal"
+                      href=""
+                    >
                       BMW.CO
                     </a>
                   </li>
 
-                  <li className="widget_item">
-                    <a className="widget_link" href="">
+                  <li className="flex flex-col font-normal :">
+                    <a
+                      className="text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] xl:text-[2.3rem] 2xl:text-[2.5rem] pt-3 hover:text-btnblue transition-color duration-500 hover:scale-105  font-normal"
+                      href=""
+                    >
                       MINI
                     </a>
                   </li>
-                  <li className="widget_item">
-                    <a className="widget_link" href="">
+                  <li className="flex flex-col font-normal :">
+                    <a
+                      className="text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] xl:text-[2.3rem] 2xl:text-[2.5rem] pt-3 hover:text-btnblue transition-color duration-500 hover:scale-105  font-normal"
+                      href=""
+                    >
                       BMW Motorrad
                     </a>
                   </li>
@@ -116,7 +93,7 @@ function Footer() {
               </div>
             </div>
           </section>
-          <section className="fouter_bottom">
+          <section className=" flex flex-col lg:flex-row justify-between items-center">
             <div className="fouter_copyright">
               <span className="copyright_text">
                 &copy; 2023, Todos los derechos reservados a{" "}

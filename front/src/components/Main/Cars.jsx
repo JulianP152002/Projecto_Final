@@ -1,77 +1,81 @@
-import { useEffect } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Products } from "../../utils/Products";
 import RenderProducts from "../../hooks/RenderProducts";
-
+import SkeletonCar from "../../Skeletons/SkeletonCar";
 function Cars() {
   const { products, getProducts } = Products();
+  const [category, setCategory] = useState("BMW M");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getProducts();
   }, []); // hay que arreglar esto, ya que si coloco products se crea un loop infinito
-  const ProductsM = products.filter((product) => product.category == "BMW M");
-  const ProductsX = products.filter((product) => product.category == "BMW X");
-  const Hibridos = products.filter((product) => product.category == "Hibridos");
+  const filteredCars = useMemo(() => {
+    return products.filter((product) => product.category === category);
+  }, [products, category]);
+  // Simular loading cuando cambia la categoría
+  useEffect(() => {
+    setLoading(true);
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 500);
 
-  const Convertibles = products.filter(
-    (product) => product.category == "Convertibles"
-  );
+    return () => clearTimeout(timeout);
+  }, [category]);
+  const categories = [
+    "BMW M",
+    "BMW X",
+    "Electricos",
+    "Hibridos",
+    "Convertibles",
+  ];
 
-  const ProductsElectricos = products.filter(
-    (product) => product.category == "Electricos"
-  );
+  const LiClass =
+    "cursor-pointer  lg:text-2xl mr-6 text-xl sm:text-base text-gray-500 hover:text-gray-800 transition-all hover:border-b-2 pb-2 sm:pb-4 whitespace-nowrap";
+  const LiClassHover =
+    "cursor-pointer lg:text-2xl mr-6 text-xl sm:text-base text-gray-800 transition-all border-b-2 pb-2 sm:pb-4 font-semibold whitespace-nowrap";
 
   return (
-    <section className="content_cars">
-      <h1 className="content_cars-title">
+    <section className="px-4 md:px-8 lg:px-16 py-10">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
         Nuestros <span>Vehiculos</span>
       </h1>
-      <nav className="w-full flex py-6 ">
-        <ul className=" w-full flex border-b-[1px] border-gray-300">
-          <li className=" cursor-pointer mr-6 text-gray-500 hover:text-gray-800 transition-all hover:border-b-[2px] pb-4 ">
-            BMW M
-          </li>
-          <li className=" cursor-pointer mr-6 text-gray-500 hover:text-gray-800 transition-all hover:border-b-[2px] pb-4 ">
-            BMW X
-          </li>
-          <li className=" cursor-pointer mr-6 text-gray-500 hover:text-gray-800 transition-all hover:border-b-[2px] pb-4 ">
-            Eléctricos
-          </li>
-          <li className=" cursor-pointer mr-6 text-gray-500 hover:text-gray-800 transition-all hover:border-b-[2px] pb-4 ">
-            Híbrido conectable
-          </li>
-          <li className=" cursor-pointer mr-6 text-gray-500 hover:text-gray-800 transition-all hover:border-b-[2px] pb-4 ">
-            Convertibles
-          </li>
+      <nav className="w-full overflow-x-auto whitespace-nowrap">
+        <ul className=" flex border-b border-gray-300 mb-6 min-w-fit">
+          {categories.map((cat) => (
+            <li
+              key={cat}
+              onClick={() => setCategory(cat)}
+              className={category === cat ? LiClassHover : LiClass}
+            >
+              {cat}
+            </li>
+          ))}
         </ul>
       </nav>
 
-      {products?.length > 0 ? (
+      {loading ? (
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <SkeletonCar key={i} />
+          ))}
+        </div>
+      ) : products?.length > 0 ? (
         <>
-          <h2 className="-ml-5 text-3xl ">BMW M</h2>
-          <div className="cars_cars-m">
-            <RenderProducts products={ProductsM} />
-          </div>
+          <h2 className="ml-5 text-3xl">{category}</h2>
+          {filteredCars.length > 0 ? (
+            <RenderProducts products={filteredCars} />
+          ) : (
+            <p className=" py-5 text-xl lg:text-2xl  text-center text-gray-500 mt-4">
+              No hay vehículos en esta categoría.
+            </p>
+          )}
           <hr />
-          <h2 className="pt-8 pb-4 -ml-5 text-3xl ">BMW X</h2>
-          <div className="cars_cars-m">
-            <RenderProducts products={ProductsX} />
-          </div>
-          <hr />
-          <h2 className="pt-8 pb-4 -ml-5 text-3xl ">BMW ELECTRICOS</h2>
-          <div className="cars_cars-m">
-            <RenderProducts products={ProductsElectricos} />
-          </div>
-          <h2 className="pt-8 pb-4 -ml-5 text-3xl ">BMW Hibridos</h2>
-          <div className="cars_cars-m">
-            <RenderProducts products={Hibridos} />
-          </div>
-          <h2 className="pt-8 pb-4 -ml-5 text-3xl ">CONVERTILES</h2>
-          <div className="cars_cars-m">
-            <RenderProducts products={Convertibles} />
-          </div>
         </>
       ) : (
-        <p>No hay Carros</p>
+        <p className=" py-5 text-xl lg:text-2xl  text-center text-gray-500 mt-4">
+          No hay Carros
+        </p>
       )}
 
       <hr />

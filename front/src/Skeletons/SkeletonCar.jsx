@@ -1,10 +1,12 @@
-export default function SkeletonCar() {
+function CarSkeleton() {
   return (
-    <div className="p-4 max-w-4xl mx-auto animate-pulse space-y-4">
-      <div className="w-full h-96 bg-gray-300 rounded-lg" />
-      <div className="h-8 bg-gray-300 rounded w-1/2" />
-      <div className="h-6 bg-gray-300 rounded w-1/3" />
-      <div className="h-24 bg-gray-200 rounded" />
+    <div className="animate-pulse flex flex-col gap-4 p-4  rounded-lg shadow-sm w-full max-w-sm bg-white">
+      <div className="h-40 bg-gray-200 rounded w-full"></div>
+      <div className="h-6 bg-gray-200 rounded w-3/4"></div>
+      <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+      <div className="h-4 bg-gray-200 rounded w-1/3"></div>
     </div>
   );
 }
+
+export default CarSkeleton;
