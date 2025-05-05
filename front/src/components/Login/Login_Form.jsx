@@ -22,7 +22,11 @@ export function LoginForm({ Validation }) {
       : navigate(`/`);
   };
   return (
-    <form className="flex  w-full flex-col" onSubmit={handleSubmit} action="">
+    <form
+      className="flex  w-[80%] md:w-[90%] lg:w-full flex-col"
+      onSubmit={handleSubmit}
+      action=""
+    >
       <input
         ref={username}
         className="border-1 border-[#7d889752] py-[3px} my-1 px-[3px} "

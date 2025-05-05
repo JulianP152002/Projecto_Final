@@ -6,5 +6,5 @@ export function Products() {
     const newProduscts = await GetProducts();
     setProducts(newProduscts);
   };
-  return { products, getProducts };
+  return { products, getProducts, setProducts };
 }
