@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import { Products } from "../../utils/Products";
 import RenderProducts from "../../hooks/RenderProducts";
 import SkeletonCar from "../../Skeletons/SkeletonCar";
+import { Element } from "react-scroll";
 function Cars() {
   const { products, getProducts } = Products();
   const [category, setCategory] = useState("BMW M");
@@ -9,11 +10,11 @@ function Cars() {
 
   useEffect(() => {
     getProducts();
-  }, []); // hay que arreglar esto, ya que si coloco products se crea un loop infinito
+  }, []);
   const filteredCars = useMemo(() => {
     return products.filter((product) => product.category === category);
   }, [products, category]);
-  // Simular loading cuando cambia la categoría
+
   useEffect(() => {
     setLoading(true);
     const timeout = setTimeout(() => {
@@ -36,7 +37,7 @@ function Cars() {
     "cursor-pointer lg:text-2xl mr-6 text-xl sm:text-base text-gray-800 transition-all border-b-2 pb-2 sm:pb-4 font-semibold whitespace-nowrap";
 
   return (
-    <section className="px-4 md:px-8 lg:px-16 py-10">
+    <Element name="cars" className="cars px-4 md:px-8 lg:px-16 py-10">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
         Nuestros <span>Vehiculos</span>
       </h1>
@@ -79,7 +80,7 @@ function Cars() {
       )}
 
       <hr />
-    </section>
+    </Element>
   );
 }
 export default Cars;

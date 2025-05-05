@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { deleteProduct } from "../api/ApiProducts";
 import { useState } from "react";
+import LogueCars from "../assets/logo_cars.png";
 import FormEdit from "../components/admin/FormEdit";
 export default function RenderProducts({
   products,
@@ -78,7 +79,7 @@ export default function RenderProducts({
                   loading="lazy"
                   alt="Logo del vehículo"
                   className="absolute bottom-3 right-8 w-30 h-12 opacity-80"
-                  src="/src/assets/logo_cars.png"
+                  src={LogueCars}
                 />
               </div>
               <div className="p-4 flex items-center flex-col gap-2">

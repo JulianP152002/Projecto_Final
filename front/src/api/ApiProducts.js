@@ -9,6 +9,11 @@ export const createProduct = async (formData) => {
   const data = await res.json();
 
   if (!res.ok) {
+    toast.error("Error al crear el producto ❌");
+    console.error(
+      "Error al crear el producto:",
+      data.message || "error desconocido"
+    );
     throw new Error(data.message || "Error al crear el producto");
   }
 

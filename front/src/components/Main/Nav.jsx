@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import logo from "/src/assets/logo.svg";
 import { Products } from "../../utils/Products";
 import CarFilter from "../../hooks/CarFilter";
@@ -17,16 +17,20 @@ function Nav() {
           </div>
 
           <ul className="menu_list">
-            <li className="menu_link">
+            <li className="menu_link *:hover:scale-105 transition-transform duration-500 checked:hover:text-btnblue cursor-pointer">
               <a href="/">Home</a>
             </li>
 
-            <li className="menu_link">
-              <Link href="/login">Lifestyle</Link>
-            </li>
-
-            <li className="menu_link">
-              <a href="/"></a>Modelos
+            <li className="menu_link *:hover:scale-105 transition-transform duration-500 checked:hover:text-btnblue cursor-pointer">
+              <Link
+                to="cars"
+                className="z-50"
+                smooth={true}
+                duration={500}
+                offset={-100}
+              >
+                Modelos
+              </Link>
             </li>
 
             <li className="menu_link">
