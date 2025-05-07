@@ -43,7 +43,7 @@ function Cars() {
       </h1>
       <nav className="w-full overflow-x-auto whitespace-nowrap">
         <ul className=" flex border-b border-gray-300 mb-6 min-w-fit">
-          {categories.map((cat) => (
+          {categories?.map((cat) => (
             <li
               key={cat}
               onClick={() => setCategory(cat)}
@@ -57,7 +57,7 @@ function Cars() {
 
       {loading ? (
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 8 })?.map((_, i) => (
             <SkeletonCar key={i} />
           ))}
         </div>
