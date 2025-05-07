@@ -1,12 +1,9 @@
 import mongoose from "mongoose";
 import { MONGODB_URI } from "./config.js";
-export const connectDB = async () => {
-  try {
-    await mongoose
-      .connect(MONGODB_URI)
-      .then((db) => console.log("data base running"));
-  } catch (error) {
-    console.log("error connecting to the database", error.message);
-  }
-};
-connectDB();
+mongoose
+  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+    process.exit(1);
+  });
