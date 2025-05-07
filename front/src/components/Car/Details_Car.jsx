@@ -8,7 +8,11 @@ export default function DetailCar() {
   return (
     <div className={isMobile ? "scroll-layout" : "w-full flex"}>
       <div className={isMobile ? "carousel" : "w-full flex"}>
-        <ul className={isMobile ? "content" : "flex justify-around pt-10"}>
+        <ul
+          className={
+            isMobile ? "content pt-[43px]" : "flex justify-around pt-10"
+          }
+        >
           <li className=" m-auto w-full  flex flex-col">
             <h3 className="text-textgray m-auto text-2xl font-extralight">
               DISEÑO
