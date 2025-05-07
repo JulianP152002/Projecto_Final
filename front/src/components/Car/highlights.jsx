@@ -3,7 +3,7 @@ export default function Highlights() {
   const cien = 400;
   const Velocidad = 193;
   return (
-    <article className=" w-full flex flex-col items-center px-6 text-textc ">
+    <article className=" w-full h-auto flex flex-col items-center px-6 text-textc ">
       <p className="w-full py-6 text-colortext flex justify-between">
         <span className=" font-extralight text-2xl">Potencia:</span>{" "}
         <span className=" font-extralight text-3xl">{potencia} hp</span>

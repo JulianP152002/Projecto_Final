@@ -21,7 +21,7 @@ export default function DesingInterior() {
       <div className="flex lg:px-4 lg:pt-10 m-auto items-center">
         <div className="w-[90%] m-auto lg:pr-4 lg:w-full lg:block py-7">
           <VideoDesing
-            src="/videos/Desing3.mp4"
+            src="/videos/Desing2.mp4"
             trigger={isMobile ? "visibility" : "hover"}
           />
           <h1 className="text-textgray text-4xl py-8">BMW Interaction Bar.</h1>
