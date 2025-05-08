@@ -14,7 +14,7 @@ export default function RenderCar({ car }) {
         alt={car.name}
         className="h-full w-[60%] object-contain"
       />
-      <Highlights />
+      <Highlights car={car} />
       <button className=" w-[96%] h-[50px] cursor-pointer bg-btngray hover:bg-btnblue transition-all duration-700  flex items-center justify-center hover:duration-300">
         <a
           className="w-full p-7"

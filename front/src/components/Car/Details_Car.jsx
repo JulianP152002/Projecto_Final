@@ -3,7 +3,7 @@ import { SizeViewport } from "../../utils/SizeViport";
 import VideoDesing from "./Video";
 export default function DetailCar() {
   const { Size } = SizeViewport();
-  const isMobile = Size < 768; // Cambia el valor según tu diseño responsivo
+  const isMobile = Size < 768;
 
   return (
     <div className={isMobile ? "scroll-layout" : "w-full flex"}>

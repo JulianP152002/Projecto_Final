@@ -3,7 +3,7 @@ import { SizeViewport } from "../../utils/SizeViport";
 
 export default function DesingInterior() {
   const { Size } = SizeViewport();
-  const isMobile = Size < 768; // Cambia el valor según tu diseño responsivo
+  const isMobile = Size < 768;
 
   return (
     <>
