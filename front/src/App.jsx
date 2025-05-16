@@ -5,10 +5,9 @@ import Admin from "./Pages/Admin";
 import SkeletonPage from "./Skeletons/SkeletonPage";
 import { useState } from "react";
 import { Suspense, lazy } from "react";
-const Username = import.meta.env.VITE_ADMIN;
 
-const Password = import.meta.env.VITE_ADMIN_PASSWORD;
-console.log(Username, Password);
+const Username = "julian";
+const Password = "julian123";
 const Car = lazy(() => import("./Pages/Car"));
 function App() {
   const [isLogged, setIsLogged] = useState(false);
